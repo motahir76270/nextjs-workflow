@@ -24,10 +24,10 @@ jobs:
        - name: build nextjs app
          run: npm run build
 
-       - name: upload build artifacts
+       - name: upload build on artifacts
          uses: actions/upload-artifact@v4.6.2
          with:
-            name: next js build
+            name: nextjs-build
             path: out/ 
 
          
