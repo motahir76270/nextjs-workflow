@@ -16,7 +16,7 @@ jobs:
          uses: actions/setup-node@v3.9.1
          with: 
             node-version: 22.x
-            chache: 'npm'
+            cache: 'npm'
             
        - name: install dependency
          run: npm install
