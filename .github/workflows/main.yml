@@ -1,0 +1,33 @@
+name: next js workflow with Artifats and Chaching
+
+on:
+  push:
+   branches: [main]
+
+jobs:
+   build:
+     runs-on: ubuntu-latest 
+
+     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v5.0.0
+
+       - name: node js setup 
+         uses: actions/setup-node@v3.9.1
+         with: 
+            node-version: 22.x
+            chache: 'npm'
+            
+       - name: install dependency
+         run: npm install
+
+       - name: build nextjs app
+         run: npm run build
+
+       - name: upload build artifacts
+         uses: actions/upload-artifact@v4.6.2
+         with:
+            name: next js build
+            path: out/ 
+
+         
