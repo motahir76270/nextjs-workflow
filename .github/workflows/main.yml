@@ -16,8 +16,7 @@ jobs:
          uses: actions/setup-node@v3.9.1
          with: 
             node-version: 22.x
-            cache: 'npm'
-            cache-dependency-path: './path/to/package-lock.json'
+            # cache: 'npm'
             
        - name: install dependency
          run: npm install
